@@ -1,14 +1,21 @@
-# Data visualisation using ggplot2
 
-Data visualisation using ggplot2:    
-1. components and layers of ggplot plot, scatterplots, aesthetics: color, size, shape.   
-2. facetting, combining different types of geoms, plotting statistical summaries.
+# Homework-1: ggplot
 
----------------------------
+The goal of this homework is to learn using ggplot2, how to map variables to aes(thetics) and also, importantly, how to work with Github.
 
-If you working from Rstudio (Cloud), since this might be your first communication attempt with Github, please update your email address and your name and enter these two lines to terminal: 
+1. Copy repo https URL (Clone or download > Clone with HTTPS) and open this repository in RStudio Cloud (New Project from Git Repo) or in your local RStudio (New Project > Version Control > Git). 
 
-```
-git config --global user.email "your@email"  
-git config --global user.name "Your Name"
-```
+2. Complete the exercises in index.Rmd file.
+
+3. Knit .Rmd file to .md file.
+
+4. Commit **all** your work/files and push completed homework to Github.
+
+-------------------
+
+Tutorial how to get repo/project from Github to your workspace: https://github.com/rstats-tln/fork-and-clone-repo
+
+More resources at https://happygitwithr.com/.
+
+Any issues can be submitted under [Issues](https://github.com/rstats-tln/hw-1-ggplot/issues)
+
