@@ -1,7 +1,7 @@
 ---
 title: "Homework 1: ggplot2"
-author: "Your Name"
-date: "2019-03-04"
+author: "Liisi Karlep"
+date: "2019-07-04"
 output: github_document
 ---
 
@@ -14,40 +14,62 @@ library(ggplot2)
 ```
 
 By using *mpg* dataset:
+```{r}
+mpg
+```
+
 
 1. Map a continuous variable to color, size, and shape. How do these aesthetics behave differently for categorical vs. continuous variables?
 
 - Color
 ```{r}
-
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = displ))
 ```
 
 - Size
 ```{r}
-
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, size = displ))
 ```
 
 - Shape
-```{r}
+#```{r}
+#ggplot(data = mpg) + 
+#  geom_point(mapping = aes(x = displ, y = hwy, shape = displ))
+#```
 
-```
+This will produce an error: A continuous variable can not be mapped to shape
+
+A continuous variable can not be mapped to shape, can be mapped to color and size. Categorical variables can be mapped to all of those, but it does not make sense to use size to map them. For continuous variables the color and size change gradually according to the values, for categorical variables certain fixed color or size is given for each value.
 
 
 2. What happens if you map the same variable to multiple aesthetics?
 
 ```{r}
-
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, size = displ, color = displ))
 ```
 
+
+They are both displayed on the same graph.
 
 3. What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
 
 ```{r}
-
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, stroke = displ))
 ```
+
+
+The stroke aesthetic is used to modify the width of the border of the shape and it can be used for shapes that have a border (like 21), so that you can colour the inside and outside separately.
 
 4. What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)?
 
 ```{r}
-
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = displ < 5))
 ```
+
+
+It will color the points according to whether the statement is false or true for them.
